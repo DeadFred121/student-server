@@ -3,8 +3,6 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-let students = ['Scott', 'Simon'];
-
 app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
@@ -14,7 +12,7 @@ app.get('/api/students', (req, res) => {
 });
 
 app.get('/students', (req, res) => {
-  res.send(students);
+  res.render('students', {students});
 });
 
 app.post('/students', (req, res) => {
