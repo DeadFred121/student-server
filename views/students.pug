@@ -8,8 +8,15 @@ html
 		ul 
 			each student in students
 				li= student.name
+				li= student.city.name
 
 		form(action='/students', method='POST')
 			p Add a student:
 			input(name='student_name')
+			br
+			select(name='student_city')
+				each city in cities
+					option(value=city._id)
+						= city.name
+			br
 			input(type='submit')

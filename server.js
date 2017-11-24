@@ -4,10 +4,12 @@ const app = express();
 const port = 3000;
 const api = require('./routes/api');
 const gui = require('./routes/gui');
+const morgan = require('morgan');
 
 app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan('dev'));
 // app.use(express.static(__dirname + '/public'));
 
 // Handle all the routes
