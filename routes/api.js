@@ -1,6 +1,6 @@
 const express = require('express');
 let router = express.Router();
-let students = require('../students');
+let Student = require('../models/student');
 
 // API Routes
 router.get('/students', (req, res) => {
